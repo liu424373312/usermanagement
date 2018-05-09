@@ -8,5 +8,61 @@ public class DBAccessBean{
     private Connection conn =null;
     private Statement stmt =null;
     private ResultSet rs =null;
+
+    public String getDrv(){
+        return drv;
+    }
+    public void setDrv(String drv){
+        this.drv=drv;
+    }
+    public String getUrl(){
+        return url;
+    }
+    public void setUrl(String url){
+        this.url=url;
+    }
+    public String getUsr(){
+        return usr;
+    }
+    public void setUsr(String usr){
+        this.usr=usr;
+    }
+    public String getPwd(){
+        return pwd;
+    }
+    public void setPwd(String pwd){
+        this.pwd=pwd;
+    }
+    public Connection getConn(){
+        return conn;
+    }
+    public void setConn(Connection conn){
+        this.conn=conn;
+    }
+    public Statement getStmt(){
+        return stmt;
+    }
+    public void setStmt(){
+        this.stmt=stmt;
+    }
+    public ResultSet getRs(){
+        return rs;
+    }
+    public void setRs(ResultSet rs){
+        this.rs=rs;
+    }
+
+    public boolean createConn(){
+        boolean b= false;
+        try{
+            Class.forName(drv).newInstance();
+            conn=DriverManager.getConnection(url,usr,pwd);
+            b=true;
+        }catch(SQLException e){}
+        catch(ClassNotFoundException e){}
+        catch(InstantiationException e){}
+        catch(IllegalAccessExceotion e){}
+        return b;
+    }
 }
 
