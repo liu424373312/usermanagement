@@ -10,7 +10,7 @@
                 <tr><td colspan="2">登录窗口</td>
                 <tr><td>用户名:</td><td><input type="text" name="username" size="10"></td>
                 </tr>
-                <tr><td>密码:</td><td><input type="text" name="password" size="10"></td>
+                <tr><td>密码:</td><td><input type="password" name="password" size="10"></td>
                 </tr>
                 <tr><td colspan="2">
                     <input type="submit" name="submit" value="登录">
